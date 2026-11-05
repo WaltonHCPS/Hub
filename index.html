@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --primary: #1e40af;
+            --primary-hover: #1d4ed8;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            margin: 24px 0 12px 0;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 6px;
+        }
+
+        /* Quick Links Grid */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+        }
+
+        .link-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.12);
+            color: var(--primary-hover);
+        }
+
+        .link-card::after {
+            content: "↗";
+            font-size: 1rem;
+            color: var(--text-sub);
+        }
+
+        .link-card:hover::after {
+            color: var(--primary-hover);
+        }
+
+        /* Calendars Grid */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .calendar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .calendar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .calendar-container {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fafafa;
+        }
+
+        .calendar-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Teacher Dashboard</h1>
+        <p class="subtitle">Quick access portal and scheduled calendars</p>
+    </header>
+
+    <h2 class="section-title">Quick Links</h2>
+    <div class="links-grid">
+        <a class="link-card" href="https://clever.com/oauth/authorize?channel=clever&client_id=4c63c1cf623dce82caac&confirmed=true&redirect_uri=https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&response_type=code&state=0252f78c7a402d8db9382fb553f25aa8c61c2dfb8bbb551ba4d8f2272b5eded1&district_id=53cee1b8b64b908905000265" target="_blank" rel="noopener">Cleaver</a>
+        <a class="link-card" href="https://sis.henrico.k12.va.us/teachers/pw.html" target="_blank" rel="noopener">Power Teacher</a>
+        <a class="link-card" href="https://sis.henrico.k12.va.us/admin/pw.html" target="_blank" rel="noopener">Power Admin</a>
+        <a class="link-card" href="https://docs.google.com/spreadsheets/d/15AW0sQg6QHCTHDtWCuDg50gLZ19h408mU7QZuisLdlc/edit?gid=1541419150#gid=1541419150" target="_blank" rel="noopener">Request for Small Group Testing</a>
+        <a class="link-card" href="https://ebiz.henrico.gov/OA_HTML/AppsLocalLogin.jsp" target="_blank" rel="noopener">My Henrico</a>
+        <a class="link-card" href="https://henrico.eschoolsolutions.com/logOnInitAction.do" target="_blank" rel="noopener">SmartFind Sub Finder</a>
+        <a class="link-card" href="https://osp.osmsinc.com/HenricoVAPortal/PayManagementDashboard/tabid/173/ctl/Login/Default.aspx?returnurl=%2fhenricovaportal%2f" target="_blank" rel="noopener">OSP</a>
+        <a class="link-card" href="https://docs.google.com/forms/d/e/1FAIpQLSemtVgRtcGuI9Pn41jZRt-_F5hAUR7VWSDywmRny6yL5Q4d-g/viewform" target="_blank" rel="noopener">GAHS Cell Phone Confiscations</a>
+        <a class="link-card" href="https://accounts.google.com/v3/signin/accountchooser?client_id=138513641593.apps.googleusercontent.com&prompt=select_account&redirect_uri=https%3A%2F%2Fapp.schoology.com%2Flogin%2Fexternal_accounts%2Freceive%2Fgoogle_apps&response_type=code&scope=openid+email&state=c2NoZW1lPWh0dHBzJmhvc3Q9aGVucmljby5zY2hvb2xvZ3kuY29tJnBhdGg9JTJGbG9naW4lMkZleHRlcm5hbF9hY2NvdW50cyUyRnJlY2VpdmUlMkZnb29nbGVfYXBwcyZxdWVyeT1kZXN0aW5hdGlvbiUzRGhvbWUlMjZzY2hvb2xfbmlkJTNEMzk1MjI5ODU3JnNjaG9vbF9uaWQ9Mzk1MjI5ODU3JnNfY3VzdG9tX2RvbWFpbj1odHRwcyUzQSUyRiUyRmhlbnJpY28uc2Nob29sb2d5LmNvbSZ0cz0xNzkzODg5ODkzJnRva2VuPVJHUTU1WktMWUZZV1VLUktEQTE1MTIyRjVGRDIxQ0VENUMzNTZFNUMxODk1OUFGMSZoYXNoPTUyYmU4ZGY4MDJjZjgwZWIwYTUyNjJjNDE5ZjkxN2Mx&suppress_webview_warning=true&dsh=S-1509792757%3A1793889893847484&o2v=1&service=lso&flowName=GeneralOAuthFlow&opparams=%253Fsuppress_webview_warning%253Dtrue&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fv3%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hANJpCPy4FK8nq1fzBSM2zz3lMBoL7dUrt1svZyc27c2kNfbhuLkE6eX1CR4IJiOZ3_DZY4EoeoQ7rzyVhMJWrRLsvhQutq0ZtW8sqUqDtr8f7hIy3Idv8LYxodgG5GPSrqUaVHMdh-PN8nml81kTqdKdCC68xAecQ983W9qOIpRirTxGtTOCkC5atHKCwPPqOIBclbb4P6d6YJXiZR_Y_sB8GEwHV08tvvU5tGyWLqFCyFUUeylvEjff24IjadGM91uS31lITnvYFQrLRoZ-2wak1uG_Dkxt9Cpbon7f_LTned_6S8GFeHBqtT3GEn__Guq98_HF4w-3k_oW-LO3b_2rB3yjr-5lbmjH-CL7QFYliBBEjkKJ6GpcuTJvpVDr3DcGZOfgxBg9_mY2b6B8R-tEPVyEU4k4c99hakWsagtaXi_Jw0%26flowName%3DGeneralOAuthFlow%26as%3DS-1509792757%253A1793889893847484%26client_id%3D138513641593.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fv3%252Fconsent%23&app_domain=https%3A%2F%2Fapp.schoology.com" target="_blank" rel="noopener">Schoology</a>
+        <a class="link-card" href="https://docs.google.com/spreadsheets/d/1AKLc5rIFx35Zzb9pQw907yv-a4kIY3XKgCyNjwaTZ5k/edit?gid=1683116195#gid=1683116195" target="_blank" rel="noopener">Teacher Locator</a>
+        <a class="link-card" href="https://login.microsoftonline.com/75d36758-88f2-4aa6-bdae-1ca9343c0c66/saml2?SAMLRequest=jZJLb8IwEIT%2FSuR73okJFkGicCgSbRHQHnqpHMcQS4439Tql%2Ffcl0Oel6tnjb3Zmd4K81R2b9a4xG%2FncS3Tea6sNsvNDSXprGHBUyAxvJTIn2HZ2s2JJELHOggMBmngzRGmdAjMHg30r7VbaFyXk%2FWZVksa5DlkYNtJYJSDodNDBUVoUDYAOBLThtlFVBVq6JkCEcHBIwvXddke8xWkkZfgA%2F0ZpOCgTtEpYQNg7MFoZeSaN8jqlo7zwi2Kf%2BBnn1K9qLv1Y8HGapSISlIZDtoR4y0VJnkbFuI6qPK%2FrKEqKIkszmhZ5lVGxz2kaDTLEXi4NOm5cSZIooX4c%2B1G%2BizOWUZbEj8Rbf1RxpUytzOHv3qqLCNn1brf2LzEfTn2cI54EZDoZJmRnY%2FtjH39j%2BecSyPQfleNX5ZPwh9vFumO3J%2FxysQatxJs30xqOcyu5kyWJSTi9fPl9N9N3&RelayState=ss%3Amem%3Ac9de59483f60db2016ac25eae3cb09805830250c37ad7f7fe42b85c54d6b7aa4" target="_blank" rel="noopener">PowerSchool - Points</a>
+    </div>
+
+    <h2 class="section-title">Calendars</h2>
+    <div class="calendar-grid">
+        <div class="calendar-card">
+            <h3>Personal Calendar</h3>
+            <div class="calendar-container">
+                <iframe src="https://outlook.office365.com/owa/calendar/ac6013636d0b4b21a42a3d89785b206c@henrico.k12.va.us/80fef47fbccf48c2bfc647b112dbda7e5847672520435802204/calendar.html"></iframe>
+            </div>
+        </div>
+
+        <div class="calendar-card">
+            <h3>School Wide Calendar</h3>
+            <div class="calendar-container">
+                <iframe src="https://outlook.office365.com/owa/calendar/58e064f802b64c08ab5acc2bf6cae367@henrico.k12.va.us/b62b1c5be5b94515a35785101db43ef96917163011449496748/calendar.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
